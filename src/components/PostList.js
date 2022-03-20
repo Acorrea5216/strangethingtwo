@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { getPosts, deletePostById, updateNewPost, deletePost } from "../api";
+import { getPosts, deletePost } from "../api";
 const PostList = () => {
 
   const [posts, setPosts] = useState([]);
