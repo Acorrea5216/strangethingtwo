@@ -21,7 +21,7 @@ const PostForm = () => {
       setLocation(location);
       setWillDeliver(willDeliver);
     }
-  }, []);
+  }, );
 
   const handlePost = async (e) => {
     e.preventDefault();

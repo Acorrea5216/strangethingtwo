@@ -11,6 +11,12 @@ const Navbar = () => {
     }, [location]);
   
     const links = [
+      {
+        to: "/register",
+        text: "Register",
+        shouldDisplay: !displayVal
+        
+      },
     {
       to: "/posts",
       text: "Posts",
