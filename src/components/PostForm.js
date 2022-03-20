@@ -10,9 +10,9 @@ const PostForm = () => {
   const [location, setLocation] = useState("");
   const [willDeliver, setWillDeliver] = useState("");
 
-  useEffect(() => { 
+  useEffect(() => {
     const { state } = loc;
-    if(state){
+    if (state) {
       const { post } = state;
       const { title, description, price, location, willDeliver } = post;
       setTitle(title);
@@ -21,7 +21,7 @@ const PostForm = () => {
       setLocation(location);
       setWillDeliver(willDeliver);
     }
-  }, []);
+  }, [loc]);
 
   const handlePost = async (e) => {
     e.preventDefault();
@@ -35,12 +35,12 @@ const PostForm = () => {
       },
     };
     const { state } = loc;
-    if(state?.updateStatus){
-        const { post } = state;
-        const { _id } = post;
-        await updatePost(postInfo, post._id);
+    if (state?.updateStatus) {
+      const { post } = state;
+      const { _id }  = post;
+      await updatePost(postInfo, post._id);
     } else {
-        await createNewPost(postInfo);
+      await createNewPost(postInfo);
     }
     setTitle("");
     setDescription("");
